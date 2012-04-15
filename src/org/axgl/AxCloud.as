@@ -357,6 +357,17 @@ package org.axgl {
 			tempMembers.length = 0;
 		}
 		
+		override public function dispose():void {
+			for (var i:uint = 0; i < members.length; i++) {
+				var entity:AxSprite = members[i];
+				entity.dispose();
+			}
+			
+			members = null;
+			tempMembers = null;
+			super.dispose();
+		}
+		
 		/**
 		 * The vertex shader for drawing clouds. 
 		 */
